@@ -1,0 +1,41 @@
+# =========================
+# Python & AI Environments
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+
+# =========================
+# Cocotb & Simulation Logs
+# =========================
+sim_build/
+results.xml
+*.log
+__pycache__/
+
+# =========================
+# Verilator Artifacts
+# =========================
+obj_dir/
+*.vcd        # Ignore large waveform dump files
+*.fst
+*.hier
+
+# =========================
+# SiliconCompiler Outputs
+# =========================
+build/
+*.gds        # Physical layout files are too large for Git
+*.lef
+*.def
+*.sdc
+sc_manifest.json
+
+# =========================
+# OS Generated Files
+# =========================
+.DS_Store
+Thumbs.db
