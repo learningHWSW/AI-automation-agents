@@ -1,0 +1,5 @@
+openai==1.12.0
+cocotb==1.8.1
+cocotb-test==0.2.4
+siliconcompiler==0.16.2
+vcdvcd==2.0.1

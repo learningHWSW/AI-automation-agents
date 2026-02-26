@@ -1,0 +1,28 @@
+Design an iterative AES-128 encryption block in Verilog.
+
+Architecture Requirements:
+
+The module MUST be named 'my_module'.
+
+Inputs: clk (wire), rst_n (wire), valid_in (wire), key (128-bit wire), data_in (128-bit wire).
+
+Outputs: valid_out (reg), data_out (128-bit reg), ready (wire).
+
+Use an iterative state machine that reuses a single AES round logic 10 times to save area. Do not unroll the loop.
+
+Implement the SubBytes step using a synthesized S-Box (not a memory lookup).
+
+The ready signal should go high when the module is idle and ready to accept new data.
+
+Once valid_in is asserted, pull ready low, process the 10 rounds over 10 clock cycles, and assert valid_out with the ciphertext on the 11th cycle.
+
+Testbench Requirements:
+Write a robust Cocotb testbench in Python.
+Use the official FIPS 197 Appendix B test vector:
+
+Plaintext: 3243f6a8885a308d313198a2e0370734 (in hex)
+
+Key: 2b7e151628aed2a6abf7158809cf4f3c (in hex)
+
+Expected Ciphertext: 3925841d02dc09fbdce1185e3a13123e (in hex)
+Ensure the testbench drives the clock, applies reset properly, sends the input data, and waits for valid_out before using an assert statement to check if the output matches the expected ciphertext.
